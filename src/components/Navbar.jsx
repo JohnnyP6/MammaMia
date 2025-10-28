@@ -2,7 +2,7 @@ import React from 'react';
 
 const Navbar = () => {
   const total = 25000;
-  const token = false; // simula sesión
+  const token = false; 
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="d-flex gap-2">
           <button className="btn btn-outline-primary">🍕 Home</button>
 
-          {/* botones dependientes del token */}
+         
           {token ? (
             <>
               <button className="btn btn-outline-secondary">🔓 Profile</button>
