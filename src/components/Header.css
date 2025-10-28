@@ -1,0 +1,52 @@
+.hero {
+  position: relative;
+  background-image: url("/public/img/banner.png"); /* reemplaza si usas otra ruta */
+  background-size: cover;
+  background-position: 0% 30%;
+  min-height: 500px;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: start;
+  border-radius: 1rem;
+  padding: 2.5rem 1rem; /* padding vertical y horizontal */
+  overflow: hidden;
+}
+
+/* Capa oscura semitransparente encima de la imagen */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.45
+  ); /* opacidad del 45%, puedes subirla a 0.6 si quieres más contraste */
+  z-index: 0;
+}
+
+/* Texto del banner */
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-shadow:                     /* respaldo para Firefox u otros */ -1px -1px
+      0 #000,
+    1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtítulo opcional (párrafo debajo del h1) */
+.hero p {
+  position: relative;
+  z-index: 1;
+  color: #f1f1f1;
+  font-size: 2rem;
+  text-shadow: 0 0 4px #000;
+}
