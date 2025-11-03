@@ -1,19 +1,20 @@
 import React from 'react'
 import Navbar from './components/Navbar';
-import Home from './components/Home';
+/* import Home from './components/Home'; */
 import Footer from './components/Footer';
+import RegisterPage from "./pages/RegisterPage";
+import LoginPage from './pages/LoginPage';
 import './App.css'
 
-function App() {
-  return (
-    <>
-      <Navbar />
-      <main className="container my-4">
-        <Home />
-      </main>
-      <Footer />
-    </>
-  );
-}
-
-export default App
+const App = () => {
+return (
+<div>
+<Navbar />
+{/* <Home /> */}
+{/* <RegisterPage /> */}
+<LoginPage />
+<Footer />
+</div>
+);
+};
+export default App;
