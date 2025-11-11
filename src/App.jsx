@@ -5,14 +5,16 @@ import Footer from './components/Footer';
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from './pages/LoginPage';
 import './App.css'
+import Cart from './components/Cart'
 
 const App = () => {
 return (
 <div>
 <Navbar />
 {/* <Home /> */}
-{/* <RegisterPage /> */}
-<LoginPage />
+{/* <RegisterPage />
+<LoginPage /> */}
+<Cart />
 <Footer />
 </div>
 );
