@@ -9,7 +9,7 @@ const RegisterPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validaciones
+
     if (!email || !password || !confirmPassword) {
       setMessage("❌ Todos los campos son obligatorios");
       return;
@@ -23,7 +23,7 @@ const RegisterPage = () => {
       return;
     }
 
-    // Si todo está bien
+
     setMessage("✅ Registro exitoso");
   };
 
