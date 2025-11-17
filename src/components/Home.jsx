@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import CardPizza from './CardPizza';
-import {pizzas} from '../pizzas';
-
 
 const Home = () => {
 
+  const [pizzas, setPizzas] = useState([]);
+
+  useEffect(() => {
+    const fetchPizzas = async () => {
+      try {
+        const res = await fetch("http://localhost:5000/api/pizzas");
+        const data = await res.json();
+        setPizzas(data);
+      } catch (error) {
+        console.error("Error al obtener pizzas:", error);
+      }
+    };
+
+    fetchPizzas();
+  }, []);
 
   return (
     <>
@@ -19,6 +32,6 @@ const Home = () => {
       </div>
     </>
   );
-}
+};
 
 export default Home;
