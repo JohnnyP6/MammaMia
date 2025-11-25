@@ -14,3 +14,17 @@
   margin: 80px auto;
   padding: 20px;
 }
+
+/* src/App.css (o tu archivo de estilos) */
+
+/* Estilos para el AuthLayout */
+.auth-layout {
+  display: flex;
+  flex-direction: column; /* Apilar verticalmente */
+  min-height: 100vh; /* Ocupar todo el alto de la vista */
+}
+
+/* El contenido (main) toma todo el espacio restante para empujar el Footer */
+.auth-content {
+  flex-grow: 1; /* Esto hace que el elemento crezca y llene el espacio vacío */
+}

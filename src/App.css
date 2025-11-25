@@ -32,3 +32,23 @@
   width: 100%;
   gap: 15px;
 }
+
+/* src/App.css */
+
+/*
+* 1. Habilitar la estructura Flexbox para el contenedor principal
+* (el div con la clase 'main-layout' que envuelve todo).
+*/
+.main-layout {
+  display: flex;
+  flex-direction: column; /* Apilar elementos verticalmente (Navbar, Contenido, Footer) */
+  min-height: 100vh; /* Ocupar al menos el 100% del alto de la ventana */
+}
+
+/*
+* 2. El contenedor de contenido (main) debe tomar todo el espacio restante.
+* Esto "empuja" al Footer al final de la vista.
+*/
+.main-content {
+  flex-grow: 1; /* Esto hace que el elemento crezca y llene el espacio vacío */
+}
