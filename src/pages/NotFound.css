@@ -2,7 +2,7 @@
   min-height: 100vh;
   overflow: hidden;
   background-image: url("../assets/NotFound.png");
-  background-size: contain;
+  background-size: contain; /* Imagen completa, no recortada */
   background-repeat: no-repeat;
   background-position: top center;
   background-color: black;
@@ -11,23 +11,24 @@
   align-items: center;
   justify-content: flex-start;
   padding-top: 300px;
-}
 
-.notfound-text {
-  text-align: center;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  color: white;
-}
+  .notfound-text {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    color: white;
+    font-size: 50px;
+  }
 
-.notfound-link {
-  display: inline-block;
-  margin-top: 15px;
-  color: #ffd24c;
-  font-weight: bold;
-  text-decoration: none;
-}
+  .notfound-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ffd24c;
+    font-weight: bold;
+    text-decoration: none;
+  }
 
-.notfound-link:hover {
-  text-decoration: underline;
+  .notfound-link:hover {
+    text-decoration: underline;
+  }
 }

@@ -9,8 +9,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
-import Cart from "./pages/Cart";
-import Pizza from "./pages/Pizza";
+import Cart from "./components/Cart";
+import Pizza from "./components/Pizza";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
@@ -20,7 +20,7 @@ const App = () => {
   return (
     <Routes>
 
-      {/* Layout general (Home, Pizza, Cart, Profile, etc.) */}
+
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
@@ -29,7 +29,7 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
       </Route>
 
-      {/* Layout especial para login/register */}
+      
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />

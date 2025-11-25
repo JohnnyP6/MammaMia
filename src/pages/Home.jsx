@@ -21,12 +21,12 @@ const Home = () => {
 
   return (
     <>
-      {/* 🔥 Este header queda FULL WIDTH, fuera del main limitado */}
+
       <div className="home-header-wrapper">
         <Header />
       </div>
 
-      {/* 🔥 Todo lo demás queda dentro del main (que ya está centrado) */}
+ 
       <div className="row g-3 mt-4">
         {pizzas.map((p, idx) => (
           <div className="col-12 col-md-6 col-lg-4" key={idx}>

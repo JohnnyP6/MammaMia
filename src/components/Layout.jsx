@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+/* import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "./Layout.css";
@@ -13,7 +13,7 @@ const Layout = () => {
     <>
       {!hideLayout && <Navbar />}
 
-      {/* Si es Home → NO usar main-layout */}
+
       {isHome ? (
         <Outlet />
       ) : (
@@ -21,6 +21,32 @@ const Layout = () => {
           <Outlet />
         </main>
       )}
+
+      {!hideLayout && <Footer />}
+    </>
+  );
+};
+
+export default Layout;
+
+
+ */
+
+import { Outlet, useLocation } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+
+const Layout = () => {
+  const location = useLocation();
+  const hideLayout = location.pathname === "/404";
+
+  return (
+    <>
+      {!hideLayout && <Navbar />}
+
+      <main>
+        <Outlet />
+      </main>
 
       {!hideLayout && <Footer />}
     </>
