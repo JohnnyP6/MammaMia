@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import CardPizza from '../components/CardPizza';
 
 const Home = () => {
-
   const [pizzas, setPizzas] = useState([]);
 
   useEffect(() => {
@@ -22,8 +21,13 @@ const Home = () => {
 
   return (
     <>
-      <Header />
-      <div className="row g-3">
+      {/* 🔥 Este header queda FULL WIDTH, fuera del main limitado */}
+      <div className="home-header-wrapper">
+        <Header />
+      </div>
+
+      {/* 🔥 Todo lo demás queda dentro del main (que ya está centrado) */}
+      <div className="row g-3 mt-4">
         {pizzas.map((p, idx) => (
           <div className="col-12 col-md-6 col-lg-4" key={idx}>
             <CardPizza {...p} />

@@ -3,19 +3,24 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "./Layout.css";
 
-
-
 const Layout = () => {
   const location = useLocation();
   const hideLayout = location.pathname === "/404";
+
+  const isHome = location.pathname === "/";
 
   return (
     <>
       {!hideLayout && <Navbar />}
 
-      <main>
+      {/* Si es Home → NO usar main-layout */}
+      {isHome ? (
         <Outlet />
-      </main>
+      ) : (
+        <main className="main-layout">
+          <Outlet />
+        </main>
+      )}
 
       {!hideLayout && <Footer />}
     </>
@@ -23,4 +28,3 @@ const Layout = () => {
 };
 
 export default Layout;
-    

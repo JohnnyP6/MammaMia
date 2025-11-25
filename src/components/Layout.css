@@ -1,6 +1,29 @@
-main {
-  max-width: 1200px;
-  margin: 0 auto; /* ← centra todo */
-  padding: 20px;
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-layout {
+  flex: 1; /* Empuja el footer hacia abajo */
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+body {
+  display: block;
+  background-color: #1c2733;
+}
+
+footer {
+  margin-top: auto;
 }

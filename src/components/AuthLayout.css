@@ -1,0 +1,16 @@
+/* LAYOUT ESPECIAL PARA LOGIN Y REGISTER */
+
+.auth-main {
+  width: 100%;
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+.auth-main {
+  flex: 1; /* 🔥 muy importante para el footer */
+  width: 100%;
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 20px;
+}

@@ -1,26 +1,23 @@
 .notfound-container {
-  width: 100%;
-  min-height: 100vh; /* Siempre el alto exacto de la pantalla */
-  overflow: hidden; /* Evita scroll */
+  min-height: 100vh;
+  overflow: hidden;
   background-image: url("../assets/NotFound.png");
-  background-size: contain; /* Mantiene la imagen completa */
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;
-  background-color: black; /* Rellena espacios sobrantes */
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Texto arriba */
-  padding-top: 120px; /* Ajusta cuánto baja el texto */
+  justify-content: flex-start;
+  padding-top: 300px;
 }
 
 .notfound-text {
   text-align: center;
   background: rgba(0, 0, 0, 0.6);
-  padding: 20px 30px;
   border-radius: 10px;
   color: white;
-  max-width: 90%;
 }
 
 .notfound-link {
