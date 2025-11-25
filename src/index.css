@@ -72,3 +72,26 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+html,
+body,
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: block; /* evita flex raros heredados */
+}
+
+#root {
+  display: block; /* obliga a que todo parta centrado por el main */
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* ← centrado REAL */
+  padding: 20px;
+}

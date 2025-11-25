@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const total = 25000;
@@ -7,26 +8,46 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <a className="navbar-brand" href="/">🍕 Mamma Mía</a>
-        <div className="d-flex gap-2">
-          <button className="btn btn-outline-primary">🍕 Home</button>
 
-         
-          {token ? (
+     
+        <Link className="navbar-brand" to="/">🍕 Mamma Mía</Link>
+
+        <div className="d-flex gap-2">
+
+        
+          <Link className="btn btn-outline-primary" to="/">
+            🍕 Home
+          </Link>
+
+     
+          {!token ? (
             <>
-              <button className="btn btn-outline-secondary">🔓 Profile</button>
-              <button className="btn btn-outline-danger">🔒 Logout</button>
+              <Link className="btn btn-outline-success" to="/login">
+                🔐 Login
+              </Link>
+
+              <Link className="btn btn-outline-warning" to="/register">
+                🔐 Register
+              </Link>
             </>
           ) : (
+           
             <>
-              <button className="btn btn-outline-success">🔐 Login</button>
-              <button className="btn btn-outline-warning">🔐 Register</button>
+              <Link className="btn btn-outline-secondary" to="/profile">
+                🔓 Profile
+              </Link>
+
+              <button className="btn btn-outline-danger">
+                🔒 Logout
+              </button>
             </>
           )}
 
-          <button className="btn btn-outline-light">
+         
+          <Link className="btn btn-outline-light" to="/cart">
             🛒 Total: ${total.toLocaleString('es-CL')}
-          </button>
+          </Link>
+
         </div>
       </div>
     </nav>
@@ -34,3 +55,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

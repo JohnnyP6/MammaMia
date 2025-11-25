@@ -3,7 +3,7 @@
   background-image: url("/public/img/banner.png");
   background-size: cover;
   background-position: 0% 30%;
-  min-height: 500px;
+  min-height: 80vh;
   color: white;
   text-align: center;
   display: flex;
@@ -11,7 +11,6 @@
   flex-direction: column;
   justify-content: start;
   border-radius: 1rem;
-  padding: 2.5rem 1rem;
   overflow: hidden;
 }
 
