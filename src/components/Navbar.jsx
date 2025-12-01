@@ -1,25 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from "../context/CartContext";
 
 const Navbar = () => {
-  const total = 25000;
-  const token = false; 
+  const { total } = useContext(CartContext);
+  const token = false;
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
 
-     
         <Link className="navbar-brand" to="/">🍕 Mamma Mía</Link>
 
         <div className="d-flex gap-2">
 
-        
           <Link className="btn btn-outline-primary" to="/">
             🍕 Home
           </Link>
 
-     
           {!token ? (
             <>
               <Link className="btn btn-outline-success" to="/login">
@@ -31,7 +29,6 @@ const Navbar = () => {
               </Link>
             </>
           ) : (
-           
             <>
               <Link className="btn btn-outline-secondary" to="/profile">
                 🔓 Profile
@@ -43,9 +40,8 @@ const Navbar = () => {
             </>
           )}
 
-         
           <Link className="btn btn-outline-light" to="/cart">
-            🛒 Total: ${total.toLocaleString('es-CL')}
+            🛒 Total: ${total.toLocaleString("es-CL")}
           </Link>
 
         </div>
@@ -55,4 +51,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
