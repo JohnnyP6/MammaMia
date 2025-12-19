@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+/* import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { CartContext } from "../context/CartContext";
 
@@ -37,6 +37,68 @@ const Navbar = () => {
               <button className="btn btn-outline-danger">
                 🔒 Logout
               </button>
+            </>
+          )}
+
+          <Link className="btn btn-outline-light" to="/cart">
+            🛒 Total: ${total.toLocaleString("es-CL")}
+          </Link>
+
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+ */
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { CartContext } from "../context/CartContext";
+import { UserContext } from "../context/UserContext"; // 1. Importamos UserContext
+
+const Navbar = () => {
+  const { total } = useContext(CartContext);
+  // 2. Reemplazamos 'const token = false' por el contexto real
+  const { token, logout } = useContext(UserContext);
+
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div className="container">
+
+        <Link className="navbar-brand" to="/">🍕 Mamma Mía</Link>
+
+        <div className="d-flex gap-2">
+
+          <Link className="btn btn-outline-primary" to="/">
+            🍕 Home
+          </Link>
+
+          {/* 3. Ajustamos la condición para usar el token real */}
+          {token ? (
+            <>
+              {/* Si hay token (Logueado): Profile y Logout */}
+              <Link className="btn btn-outline-secondary" to="/profile">
+                🔓 Profile
+              </Link>
+
+              <button 
+                className="btn btn-outline-danger"
+                onClick={logout} // Ejecuta la función logout del contexto
+              >
+                🔒 Logout
+              </button>
+            </>
+          ) : (
+            <>
+              {/* Si NO hay token (No Logueado): Login y Register */}
+              <Link className="btn btn-outline-success" to="/login">
+                🔐 Login
+              </Link>
+
+              <Link className="btn btn-outline-warning" to="/register">
+                🔐 Register
+              </Link>
             </>
           )}
 
