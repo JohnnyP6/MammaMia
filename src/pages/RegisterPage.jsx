@@ -1,57 +1,61 @@
-import { useState } from "react";
+
+
+import React, { useState, useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const { register } = useContext(UserContext);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-
-    if (!email || !password || !confirmPassword) {
-      setMessage("❌ Todos los campos son obligatorios");
-      return;
-    }
-    if (password.length < 6) {
-      setMessage("❌ La contraseña debe tener al menos 6 caracteres");
-      return;
-    }
-    if (password !== confirmPassword) {
-      setMessage("❌ Las contraseñas no coinciden");
-      return;
-    }
-
-
-    setMessage("✅ Registro exitoso");
+    if (!email || !password) return alert("Campos obligatorios");
+    if (password.length < 6) return alert("Password muy corto");
+    if (password !== confirmPassword) return alert("Passwords no coinciden");
+    await register(email, password);
   };
 
   return (
-    <div className="form-container">
-      <h2>Registro</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Correo electrónico"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Confirmar contraseña"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-        <button type="submit">Registrar</button>
-      </form>
-      {message && <p>{message}</p>}
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <h2 className="text-center mb-4">Registro</h2>
+          <form onSubmit={handleSubmit} className="border p-4 rounded bg-light">
+            <div className="mb-3">
+              <label className="form-label">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Confirmar Password</label>
+              <input
+                type="password"
+                className="form-control"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </div>
+            <button type="submit" className="btn btn-primary w-100">
+              Registrar
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
